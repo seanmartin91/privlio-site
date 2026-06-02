@@ -1,0 +1,8 @@
+﻿[build]
+  publish = "."
+
+# Serve clean URLs (/privacy, /terms) and a friendly 404
+[[redirects]]
+  from = "/app"
+  to = "/preview"
+  status = 301
