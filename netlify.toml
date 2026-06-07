@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+# Friendly alias for the interactive app preview
+[[redirects]]
+  from = "/app"
+  to = "/preview"
+  status = 301
