@@ -1,6 +1,6 @@
-﻿# Privlio — Marketing Site
+# Privilio — Marketing Site
 
-Static marketing + legal site for **Privlio**, a local-first private contact manager
+Static marketing + legal site for **Privilio**, a local-first private contact manager
 (contacts stay on your device, with a PIN-protected vault). No servers, no accounts.
 
 ## Pages
