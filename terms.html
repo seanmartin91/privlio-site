@@ -34,7 +34,7 @@ strong{color:var(--text)}
       <div class="logo-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
       Privilio
     </a>
-    <a href="/" class="back">← Back to privlio.ca</a>
+    <a href="/" class="back">← Back to privilio.ca</a>
   </div>
 </nav>
 <div class="hero">
@@ -45,10 +45,10 @@ strong{color:var(--text)}
   <p>By using Privilio, you agree to these Terms of Service. Please read them. If you don't agree, don't use Privilio.</p>
 
   <h2>1. The service</h2>
-  <p>Privilio is a local-first, private contact manager with a PIN-protected vault, published by Adapting Services Limited, Ontario, Canada ("Privilio", "we", "us"). The app runs entirely on your device. We operate no servers and do not host, transmit, or store your contacts — everything you create stays in local storage on your device.</p>
+  <p>Privilio is an end-to-end encrypted contact manager with a PIN-protected vault, published by Adapting Services Limited, Ontario, Canada ("Privilio", "we", "us"). Your contacts are encrypted on your device with a key derived from your passphrase and synced across your devices. We store only encrypted ciphertext — we cannot read your contacts.</p>
 
-  <h2>2. No account, your device</h2>
-  <p>Privilio requires no account, email, or sign-up — you simply install the app and start adding contacts. Because your data lives only on your device, you are responsible for the security of that device and for any PIN you set to protect your vault. <strong>If you lose your device without an exported backup, your data cannot be recovered.</strong> This is the trade-off for keeping your network entirely off the cloud.</p>
+  <h2>2. Your account and passphrase</h2>
+  <p>To sync across devices, you create an account and choose an encryption passphrase. You are responsible for keeping your account credentials and passphrase secure. <strong>Your passphrase is the only key to your data. We never receive it and cannot reset or recover it — if you lose it, your data cannot be recovered.</strong> This is a core part of the privacy guarantee, not a bug.</p>
   <p>You must be at least 13 years old to use Privilio. If you are under 18, you must have parental consent.</p>
 
   <h2>3. Acceptable use</h2>
@@ -62,29 +62,28 @@ strong{color:var(--text)}
   <p>We reserve the right to discontinue providing the app or updates to anyone who violates these terms.</p>
 
   <h2>4. Privacy</h2>
-  <p>Our Privacy Policy (available at privlio.ca/privacy) describes how we handle data. The key point: your contacts, notes, and vault stay on your device — we never receive them and cannot read them. You own your data, in full.</p>
+  <p>Our Privacy Policy (available at privilio.ca/privacy) describes how we handle data. The key point: your contacts, notes, and vault are end-to-end encrypted — we store only ciphertext and never receive your passphrase, so we cannot read them. You own your data, in full.</p>
 
   <h2>5. Pricing and payments</h2>
   <p>Privilio offers a free tier and optional paid upgrades. Any purchases are processed by the app store you download from (the Apple App Store or Google Play) under their terms, billing, and refund policies. Subscriptions renew and can be cancelled through your app store account. We may change pricing for future purchases with reasonable notice.</p>
 
   <h2>6. Data loss warning</h2>
-  <p><strong>Important:</strong> Because Privilio stores everything locally and we keep no copy, your data cannot be recovered by us if:</p>
+  <p><strong>Important:</strong> Because of our end-to-end encryption, your data cannot be recovered by us if:</p>
   <ul>
-    <li>You delete the app or clear its data without first exporting a backup</li>
-    <li>You lose, reset, or damage your device without a backup</li>
-    <li>You forget the PIN protecting your vault</li>
+    <li>You forget your passphrase (we never receive it and cannot reset it)</li>
+    <li>You delete your account</li>
   </ul>
-  <p>We strongly recommend exporting a JSON backup regularly (Settings → Export contacts) and storing it somewhere safe. We are not responsible for data loss resulting from device loss, deletion, or a forgotten PIN.</p>
+  <p>We strongly recommend remembering your passphrase and storing it in a secure password manager, and keeping a JSON export as a backup (Settings → Export contacts). We are not responsible for data loss resulting from a forgotten passphrase or account deletion.</p>
 
   <h2>7. Intellectual property</h2>
-  <p>Privilio and its underlying software are owned by Adapting Services Limited. You retain ownership of all content you create in Privilio. Because that content never leaves your device, you grant us no licence to it — we simply provide the app you use to manage it.</p>
+  <p>Privilio and its underlying software are owned by Adapting Services Limited. You retain ownership of all content you create in Privilio. By using the service, you grant us a limited, non-exclusive licence to store and transmit your content <em>in encrypted form</em> solely to provide the sync service — we cannot read it.</p>
 
   <h2>8. Limitation of liability</h2>
   <p>To the maximum extent permitted by applicable law, Privilio is provided "as is" without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the service, including data loss, service interruptions, or security breaches beyond our control.</p>
   <p>Our total liability to you for any claim arising from these terms or the app shall not exceed the amount you paid for Privilio in the 12 months preceding the claim.</p>
 
   <h2>9. Termination</h2>
-  <p>You may stop using Privilio at any time by deleting your data (Settings → Danger zone) and uninstalling the app. Because we hold no account and no copy of your data, there is nothing for us to delete on our end. We may discontinue the app or stop providing updates at our discretion.</p>
+  <p>You may delete your account and data at any time from Settings. When you do, your encrypted data is permanently deleted within 30 days. We may suspend or terminate accounts that violate these terms, with or without notice.</p>
 
   <h2>10. Changes to terms</h2>
   <p>We may update these terms from time to time. We will post material changes within the app or on this page at least 30 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
@@ -93,10 +92,10 @@ strong{color:var(--text)}
   <p>These terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law principles. Any disputes shall be resolved in the courts of Ontario, Canada.</p>
 
   <h2>12. Contact</h2>
-  <p>Questions about these terms: legal@privlio.ca<br>General: hello@privlio.ca<br>Adapting Services Limited, Ontario, Canada</p>
+  <p>Questions about these terms: legal@privilio.ca<br>General: hello@privilio.ca<br>Adapting Services Limited, Ontario, Canada</p>
 </div>
 <footer class="footer">
-  <p>© 2026 Privilio · Adapting Services Limited · <a href="/">privlio.ca</a> · <a href="/privacy">Privacy Policy</a></p>
+  <p>© 2026 Privilio · Adapting Services Limited · <a href="/">privilio.ca</a> · <a href="/privacy">Privacy Policy</a></p>
 </footer>
 </body>
 </html>
