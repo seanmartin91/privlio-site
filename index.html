@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privilio — Your contacts. Fully private.</title>
 <meta name="description" content="An end-to-end encrypted contact manager that syncs across your devices. Encrypted with a passphrase only you know — we store only ciphertext. Built in Canada.">
-<meta name="theme-color" content="#534AB7">
+<meta name="theme-color" content="#0A0E15">
 <meta property="og:title" content="Privilio — Your contacts. Fully private.">
 <meta property="og:description" content="End-to-end encrypted contacts, synced across your devices. Zero-knowledge — we only store ciphertext.">
 <meta property="og:url" content="https://privilio.ca">
@@ -15,176 +15,202 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --pri:#534AB7;--pri2:#4338CA;--pri-lt:#6366F1;--pri-pale:#EEEDFE;--pri-dark:#3C3489;
-  --text:#1a1a2e;--text2:#4a4a6a;--text3:#8888aa;
-  --bg:#ffffff;--bg2:#F8F7FF;--bg3:#F0EFF9;
-  --border:rgba(83,74,183,0.12);--border2:rgba(83,74,183,0.22);
-  --green:#059669;--green-bg:#ECFDF5;
-  --radius:14px;--radius-sm:9px;
+  --bg:#0A0E15;--bg2:#0E141E;--surface:#121A26;--surface2:#16202E;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --teal:#2DD4BF;--teal-bright:#5EEAD4;--teal-deep:#0D9488;--teal-glow:rgba(45,212,191,0.14);
+  --text:#E8EEF4;--text2:#9FB0C0;--text3:#647386;
+  --gold:#FAC775;--blue:#818CF8;--green:#6EE7B7;--coral:#F5A38A;
+  --radius:16px;--radius-sm:10px;
 }
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden;line-height:1.5}
+a{color:inherit}
+::selection{background:var(--teal-glow);color:#fff}
 
 /* ── NAV ── */
-.nav{position:sticky;top:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:100;padding:0 max(1.5rem,calc(50% - 560px))}
-.nav-inner{height:58px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-.nav-logo-icon{width:32px;height:32px;background:var(--pri);border-radius:9px;display:flex;align-items:center;justify-content:center}
-.nav-logo-icon svg{width:18px;height:18px;fill:none;stroke:white;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.nav-logo-text{font-size:18px;font-weight:700;letter-spacing:-0.3px}
-.nav-links{display:flex;align-items:center;gap:6px}
-.nav-link{font-size:14px;font-weight:500;color:var(--text2);text-decoration:none;padding:7px 12px;border-radius:8px;transition:color 0.15s}
-.nav-link:hover{color:var(--pri)}
-.nav-cta{font-size:14px;font-weight:600;color:white;background:var(--pri);border:none;cursor:pointer;padding:8px 18px;border-radius:var(--radius-sm);text-decoration:none;transition:background 0.15s}
-.nav-cta:hover{background:var(--pri2)}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,14,21,0.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 max(1.5rem,calc(50% - 580px))}
+.nav-inner{height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--teal) 0%,var(--teal-deep) 100%);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px var(--teal-glow)}
+.nav-logo-icon svg{width:18px;height:18px;fill:none;stroke:#04121040;stroke:#06231f;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.nav-logo-text{font-size:19px;font-weight:700;letter-spacing:-0.3px;background:linear-gradient(90deg,var(--teal-bright),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{font-size:14px;font-weight:500;color:var(--text2);text-decoration:none;padding:8px 13px;border-radius:8px;transition:color .15s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{font-size:14px;font-weight:600;color:#04201c;background:var(--teal);border:none;cursor:pointer;padding:9px 18px;border-radius:var(--radius-sm);text-decoration:none;transition:background .15s,box-shadow .15s;box-shadow:0 0 0 0 var(--teal-glow)}
+.nav-cta:hover{background:var(--teal-bright);box-shadow:0 0 22px var(--teal-glow)}
 
 /* ── HERO ── */
-.hero{padding:5rem max(1.5rem,calc(50% - 560px)) 4rem;text-align:center;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%)}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--pri);background:var(--pri-pale);padding:5px 14px;border-radius:20px;margin-bottom:1.5rem;border:1px solid var(--border2)}
+.hero{position:relative;padding:5.5rem max(1.5rem,calc(50% - 580px)) 3.5rem;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:760px;height:560px;background:radial-gradient(ellipse at center,var(--teal-glow) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--teal-bright);background:rgba(45,212,191,0.08);padding:6px 15px;border-radius:30px;margin-bottom:1.5rem;border:1px solid rgba(45,212,191,0.22)}
 .hero-badge i{font-size:14px}
-.hero h1{font-size:clamp(36px,6vw,68px);font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:1.25rem;color:var(--text)}
-.hero h1 em{font-style:normal;color:var(--pri)}
+.hero h1{font-size:clamp(38px,6.2vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:1.25rem}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--teal-bright),var(--teal) 60%,var(--teal-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:clamp(16px,2vw,20px);color:var(--text2);line-height:1.6;max-width:600px;margin:0 auto 2.5rem}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:1.25rem}
-.btn-pri{font-size:16px;font-weight:700;color:white;background:var(--pri);border:none;cursor:pointer;padding:14px 32px;border-radius:var(--radius);text-decoration:none;transition:background 0.15s;display:inline-flex;align-items:center;gap:8px}
-.btn-pri:hover{background:var(--pri2)}
-.btn-ghost{font-size:16px;font-weight:600;color:var(--text);background:transparent;border:1.5px solid var(--border2);cursor:pointer;padding:13px 28px;border-radius:var(--radius);text-decoration:none;transition:border-color 0.15s;display:inline-flex;align-items:center;gap:8px}
-.btn-ghost:hover{border-color:var(--pri);color:var(--pri)}
+.btn-pri{font-size:16px;font-weight:700;color:#04201c;background:var(--teal);border:none;cursor:pointer;padding:15px 32px;border-radius:14px;text-decoration:none;transition:background .15s,box-shadow .15s;display:inline-flex;align-items:center;gap:9px;box-shadow:0 0 30px var(--teal-glow)}
+.btn-pri:hover{background:var(--teal-bright)}
+.btn-ghost{font-size:16px;font-weight:600;color:var(--text);background:transparent;border:1.5px solid var(--border2);cursor:pointer;padding:14px 28px;border-radius:14px;text-decoration:none;transition:border-color .15s,color .15s;display:inline-flex;align-items:center;gap:9px}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-bright)}
 .hero-note{font-size:13px;color:var(--text3)}
 .hero-stores{display:flex;gap:10px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
-.store-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--border2);border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-weight:600;color:var(--text);text-decoration:none;transition:border-color 0.15s;background:white}
-.store-btn:hover{border-color:var(--pri);color:var(--pri)}
+.store-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--border2);border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-weight:600;color:var(--text2);text-decoration:none;transition:border-color .15s,color .15s;background:var(--surface)}
+.store-btn:hover{border-color:var(--teal);color:var(--text)}
 .store-btn i{font-size:20px}
 
-/* ── PHONE MOCKUP ── */
-.mockup-section{padding:0 max(1.5rem,calc(50% - 560px)) 4rem;display:flex;justify-content:center}
-.phones-wrap{display:flex;gap:16px;justify-content:center;align-items:flex-start}
-.phone-frame{width:200px;flex-shrink:0;background:white;border:2px solid rgba(0,0,0,0.12);border-radius:32px;overflow:hidden;box-shadow:0 20px 60px rgba(83,74,183,0.18),0 4px 16px rgba(0,0,0,0.08)}
-.ph-notch{height:24px;background:#f5f5f8;display:flex;justify-content:center;align-items:center}
-.ph-pill{width:44px;height:5px;background:#d0d0d8;border-radius:3px}
-.ph-screen{background:var(--bg2)}
-.ph-av{width:28px;height:28px;border-radius:50%;background:var(--pri);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;flex-shrink:0}
-/* Vault / list screen */
-.ph-vault-header{padding:8px 12px;background:white;border-bottom:1px solid rgba(83,74,183,0.08);font-size:12px;font-weight:700;color:var(--text)}
-.ph-vault-stat{display:flex;justify-content:space-between;padding:5px 12px;font-size:9px;color:var(--text3);background:var(--pri-pale)}
-.ph-vault-item{display:flex;align-items:center;gap:8px;padding:7px 12px;border-bottom:1px solid rgba(83,74,183,0.06)}
-.ph-vault-icon{width:24px;height:24px;background:var(--pri-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-.ph-vault-name{font-size:9px;font-weight:600;color:var(--text)}
-.ph-vault-meta{font-size:8px;color:var(--text3)}
-.ph-vault-lock{font-size:10px;color:var(--green)}
-.ph-bnav{display:flex;background:white;border-top:1px solid rgba(83,74,183,0.08)}
-.ph-bni{flex:1;display:flex;flex-direction:column;align-items:center;padding:5px 0 6px;gap:1px}
+/* ── PHONE MOCKUPS ── */
+.mockup{position:relative;padding:1rem max(1.5rem,calc(50% - 580px)) 5rem;display:flex;justify-content:center}
+.phones{display:flex;gap:18px;align-items:flex-start}
+.phone{width:208px;flex-shrink:0;background:#05080d;border:1px solid var(--border2);border-radius:34px;padding:7px;box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 50px var(--teal-glow)}
+.ph-inner{background:var(--bg);border-radius:28px;overflow:hidden}
+.ph-notch{height:22px;display:flex;justify-content:center;align-items:center}
+.ph-pill{width:42px;height:5px;background:#222b38;border-radius:3px}
+/* unlock screen */
+.ph-unlock{padding:34px 16px 30px;text-align:center;display:flex;flex-direction:column;align-items:center;min-height:380px;justify-content:center}
+.ph-lockico{width:46px;height:46px;border-radius:13px;background:rgba(45,212,191,0.1);border:1px solid rgba(45,212,191,0.22);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:22px;margin-bottom:16px}
+.ph-ul-title{font-size:14px;font-weight:700;margin-bottom:5px}
+.ph-ul-sub{font-size:8.5px;color:var(--text3);line-height:1.5;margin-bottom:18px;max-width:150px}
+.ph-ul-input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:9px 10px;font-size:9px;color:var(--text3);text-align:left;display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+.ph-ul-btn{width:100%;background:var(--teal-deep);color:#eafffb;border-radius:9px;padding:9px;font-size:9px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:14px}
+.ph-ul-link{font-size:8px;color:var(--teal);display:flex;align-items:center;gap:4px}
+/* contacts screen */
+.ph-head{padding:12px 13px 6px;display:flex;align-items:flex-start;justify-content:space-between}
+.ph-brand{font-size:14px;font-weight:700;color:var(--teal-bright)}
+.ph-brandsub{font-size:7.5px;color:var(--text3);font-weight:500}
+.ph-plus{width:20px;height:20px;border-radius:7px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:11px}
+.ph-search{margin:4px 11px 7px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 9px;font-size:8px;color:var(--text3);display:flex;align-items:center;gap:5px}
+.ph-chips{display:flex;gap:4px;padding:0 11px 8px;font-size:7.5px;font-weight:600}
+.ph-chip{padding:3px 9px;border-radius:20px;color:var(--text3);border:1px solid var(--border)}
+.ph-chip.on{background:rgba(45,212,191,0.13);color:var(--teal-bright);border-color:rgba(45,212,191,0.3)}
+.ph-row{display:flex;align-items:center;gap:9px;padding:7px 11px;border-top:1px solid var(--border)}
+.ph-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;flex-shrink:0}
+.ph-nm{font-size:9px;font-weight:600}
+.ph-mt{font-size:7.5px;color:var(--text3)}
+.ph-tag{font-size:7px;font-weight:600;margin-left:auto;white-space:nowrap}
+.ph-bnav{display:flex;border-top:1px solid var(--border);background:var(--bg2);margin-top:4px}
+.ph-bni{flex:1;display:flex;flex-direction:column;align-items:center;padding:7px 0 8px;gap:2px}
 .ph-bni i{font-size:14px;color:var(--text3)}
-.ph-bni span{font-size:7px;color:var(--text3)}
-.ph-bni.on i,.ph-bni.on span{color:var(--pri)}
+.ph-bni span{font-size:6.5px;color:var(--text3)}
+.ph-bni.on i,.ph-bni.on span{color:var(--teal-bright)}
+.ph-fab{position:absolute;bottom:46px;right:14px;width:30px;height:30px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;color:#04201c;font-size:16px;box-shadow:0 6px 16px var(--teal-glow)}
+.ph-wrap{position:relative}
+.ph-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--teal);color:#04201c;font-size:9px;font-weight:700;padding:3px 12px;border-radius:20px;white-space:nowrap;z-index:2}
+
+/* ── SECTION SHELL ── */
+.section{padding:5rem max(1.5rem,calc(50% - 580px))}
+.section-label{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.12;margin-bottom:1rem}
+.section-sub{font-size:16px;color:var(--text2);line-height:1.65;max-width:560px}
+.center{text-align:center}
+.center .section-sub{margin:0 auto}
+
+/* ── PILLARS ── */
+.pillars{padding:1rem max(1.5rem,calc(50% - 580px)) 4rem}
+.pillar-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:560px;margin:0 auto}
+.pillar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;gap:16px;align-items:flex-start;transition:border-color .15s,transform .15s}
+.pillar:hover{border-color:rgba(45,212,191,0.3);transform:translateY(-2px)}
+.pillar-ico{width:44px;height:44px;border-radius:12px;background:rgba(45,212,191,0.1);border:1px solid rgba(45,212,191,0.2);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:21px;flex-shrink:0}
+.pillar h3{font-size:17px;font-weight:700;margin-bottom:5px}
+.pillar p{font-size:14px;color:var(--text2);line-height:1.6}
 
 /* ── TRUST BAR ── */
-.trust-bar{background:var(--pri);padding:1.25rem max(1.5rem,calc(50% - 560px))}
-.trust-inner{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(255,255,255,0.9)}
-.trust-item i{font-size:18px;color:rgba(255,255,255,0.7)}
+.trust{background:linear-gradient(90deg,rgba(45,212,191,0.06),rgba(45,212,191,0.02));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.25rem max(1.5rem,calc(50% - 580px))}
+.trust-inner{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--text2)}
+.trust-item i{font-size:18px;color:var(--teal)}
 
-/* ── HOW IT WORKS ── */
-.hiw{padding:5rem max(1.5rem,calc(50% - 560px));background:var(--bg)}
-.section-label{font-size:12px;font-weight:700;color:var(--pri);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
-.section-title{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:1rem}
-.section-sub{font-size:16px;color:var(--text2);line-height:1.65;max-width:520px;margin-bottom:3rem}
-.steps{display:flex;flex-direction:column;gap:0}
-.step{display:flex;gap:24px;padding:2rem 0;border-bottom:1px solid var(--border)}
+/* ── STEPS ── */
+.steps{display:flex;flex-direction:column;gap:0;margin-top:1rem}
+.step{display:flex;gap:22px;padding:1.9rem 0;border-bottom:1px solid var(--border)}
 .step:last-child{border-bottom:none}
-.step-num{width:44px;height:44px;background:var(--pri-pale);border:1.5px solid var(--border2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--pri);flex-shrink:0;margin-top:2px}
-.step-title{font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text)}
-.step-desc{font-size:14px;color:var(--text2);line-height:1.6}
-.step-code{font-size:11px;font-family:monospace;background:var(--bg3);color:var(--pri);padding:3px 8px;border-radius:5px;display:inline-block;margin-top:8px;border:1px solid var(--border2)}
+.step-num{width:46px;height:46px;border-radius:13px;background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.2);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:var(--teal-bright);flex-shrink:0;margin-top:2px}
+.step-title{font-size:18px;font-weight:700;margin-bottom:6px}
+.step-desc{font-size:14.5px;color:var(--text2);line-height:1.6}
 
 /* ── FEATURES ── */
-.features{padding:5rem max(1.5rem,calc(50% - 560px));background:var(--bg2)}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:2.5rem}
-.feat-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
-.feat-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px}
-.feat-title{font-size:16px;font-weight:700;margin-bottom:6px}
-.feat-desc{font-size:13px;color:var(--text2);line-height:1.6}
-.feat-badge{display:inline-block;font-size:10px;font-weight:600;color:var(--green);background:var(--green-bg);padding:2px 8px;border-radius:10px;margin-top:8px}
+.feat-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:2.5rem}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;transition:border-color .15s}
+.feat-card:hover{border-color:var(--border2)}
+.feat-ico{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:15px;font-size:21px;background:rgba(45,212,191,0.09);color:var(--teal)}
+.feat-title{font-size:16px;font-weight:700;margin-bottom:7px}
+.feat-desc{font-size:13.5px;color:var(--text2);line-height:1.6}
+.feat-badge{display:inline-block;font-size:11px;font-weight:600;color:var(--teal-bright);background:rgba(45,212,191,0.1);padding:3px 10px;border-radius:12px;margin-top:11px}
 
 /* ── COMPARISON ── */
-.comparison{padding:5rem max(1.5rem,calc(50% - 560px));background:var(--bg)}
-.compare-table{width:100%;border-collapse:collapse;margin-top:2.5rem;font-size:14px}
-.compare-table th{padding:12px 16px;text-align:left;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;border-bottom:2px solid var(--border)}
-.compare-table th.pri-col{color:var(--pri);background:var(--pri-pale)}
-.compare-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:middle}
-.compare-table tr:last-child td{border-bottom:none}
-.compare-table td.pri-col{background:var(--pri-pale);font-weight:600;color:var(--pri)}
-.check{color:var(--green);font-size:16px}
-.cross{color:#DC2626;font-size:16px}
+.compare-wrap{overflow-x:auto;margin-top:2.5rem;border:1px solid var(--border);border-radius:var(--radius)}
+.compare{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.compare th{padding:14px 16px;text-align:left;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+.compare th.pri{color:var(--teal-bright);background:rgba(45,212,191,0.07)}
+.compare td{padding:13px 16px;border-bottom:1px solid var(--border);color:var(--text2)}
+.compare tr:last-child td{border-bottom:none}
+.compare td.pri{background:rgba(45,212,191,0.05);text-align:center}
+.compare td.col{text-align:center}
+.yes{color:var(--teal);font-size:16px}
+.no{color:#4b5563;font-size:16px}
 .partial{color:var(--text3);font-size:12px}
 
 /* ── PRICING ── */
-.pricing{padding:5rem max(1.5rem,calc(50% - 560px));background:var(--bg2)}
 .price-grid{display:flex;flex-direction:column;gap:16px;margin-top:2.5rem}
-.price-card{background:white;border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;position:relative;overflow:hidden}
-.price-card.featured{border-color:var(--pri);background:white}
-.price-card.featured::before{content:'Most popular';position:absolute;top:14px;right:-24px;background:var(--pri);color:white;font-size:10px;font-weight:700;padding:4px 32px;transform:rotate(35deg)}
-.price-tier{font-size:13px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
-.price-amount{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
-.price-val{font-size:36px;font-weight:800;color:var(--text);letter-spacing:-1px}
-.price-period{font-size:14px;color:var(--text3)}
-.price-yearly{font-size:12px;color:var(--green);font-weight:500;margin-bottom:16px}
-.price-features{font-size:13px;color:var(--text2);line-height:2;margin-bottom:20px}
-.price-features li{list-style:none;display:flex;align-items:center;gap:8px}
-.price-features li i{color:var(--pri);font-size:14px;flex-shrink:0}
-.price-btn{width:100%;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius-sm);cursor:pointer;border:none;transition:background 0.15s}
-.price-btn-pri{background:var(--pri);color:white}
-.price-btn-pri:hover{background:var(--pri2)}
-.price-btn-out{background:transparent;border:1.5px solid var(--border2);color:var(--text)}
-.price-btn-out:hover{border-color:var(--pri);color:var(--pri)}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.9rem;position:relative}
+.price-card.feat{border-color:var(--teal);box-shadow:0 0 36px var(--teal-glow)}
+.price-card.feat::before{content:'Most popular';position:absolute;top:-12px;left:1.9rem;background:var(--teal);color:#04201c;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px}
+.price-tier{font-size:13px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.price-amt{display:flex;align-items:baseline;gap:5px;margin-bottom:4px}
+.price-val{font-size:38px;font-weight:800;letter-spacing:-1px}
+.price-per{font-size:14px;color:var(--text3)}
+.price-note{font-size:12.5px;color:var(--teal-bright);font-weight:500;margin-bottom:18px;min-height:16px}
+.price-feats{list-style:none;font-size:13.5px;color:var(--text2);line-height:1;margin-bottom:22px}
+.price-feats li{display:flex;align-items:center;gap:9px;padding:7px 0}
+.price-feats li i{color:var(--teal);font-size:15px;flex-shrink:0}
+.price-btn{width:100%;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius-sm);cursor:pointer;border:1.5px solid var(--border2);background:transparent;color:var(--text);transition:.15s}
+.price-btn:hover{border-color:var(--teal);color:var(--teal-bright)}
+.price-btn.fill{background:var(--teal);color:#04201c;border-color:var(--teal)}
+.price-btn.fill:hover{background:var(--teal-bright);color:#04201c}
 
-/* ── OPEN SOURCE / AUDIT ── */
-.audit{padding:5rem max(1.5rem,calc(50% - 560px));background:linear-gradient(135deg,var(--pri) 0%,var(--pri2) 100%);text-align:center;color:white}
-.audit h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-0.5px;margin-bottom:1rem}
-.audit p{font-size:16px;opacity:0.85;line-height:1.65;max-width:560px;margin:0 auto 2rem}
+/* ── AUDIT BAND ── */
+.audit{margin:0 max(1.5rem,calc(50% - 580px));border-radius:24px;background:radial-gradient(ellipse at 50% 0%,rgba(45,212,191,0.16),transparent 70%),linear-gradient(160deg,#0f1d24,#0b141d);border:1px solid rgba(45,212,191,0.18);padding:4rem 2rem;text-align:center}
+.audit h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-0.5px;margin-bottom:1rem;line-height:1.15}
+.audit p{font-size:16px;color:var(--text2);line-height:1.65;max-width:600px;margin:0 auto 2rem}
 .audit-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.audit-btn{font-size:14px;font-weight:600;padding:11px 24px;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.audit-btn-white{background:white;color:var(--pri);border:none}
-.audit-btn-white:hover{background:var(--pri-pale)}
-.audit-btn-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,0.4)}
-.audit-btn-outline:hover{border-color:white}
 
 /* ── FAQ ── */
-.faq{padding:5rem max(1.5rem,calc(50% - 560px));background:var(--bg)}
-.faq-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:0}
-.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);background:none;border:none;width:100%;text-align:left}
-.faq-q i{font-size:18px;color:var(--text3);transition:transform 0.2s;flex-shrink:0}
-.faq-a{font-size:14px;color:var(--text2);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.2s}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:1.25rem}
+.faq-list{margin-top:2.5rem;display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:1.3rem 0;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);background:none;border:none;width:100%;text-align:left}
+.faq-q i{font-size:18px;color:var(--teal);transition:transform .2s;flex-shrink:0}
+.faq-a{font-size:14.5px;color:var(--text2);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .2s}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:1.3rem}
 .faq-item.open .faq-q i{transform:rotate(45deg)}
 
 /* ── FOOTER ── */
-.footer{background:var(--text);color:rgba(255,255,255,0.6);padding:3rem max(1.5rem,calc(50% - 560px)) 2rem}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem max(1.5rem,calc(50% - 580px)) 2rem}
 .footer-top{display:flex;flex-wrap:wrap;gap:3rem;justify-content:space-between;margin-bottom:3rem}
-.footer-brand{max-width:280px}
-.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.footer-logo-icon{width:32px;height:32px;background:var(--pri);border-radius:9px;display:flex;align-items:center;justify-content:center}
-.footer-logo-icon svg{width:18px;height:18px;fill:none;stroke:white;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.footer-logo-text{font-size:18px;font-weight:700;color:white}
-.footer-tagline{font-size:13px;line-height:1.6}
-.footer-col h4{font-size:12px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:8px;transition:color 0.15s}
-.footer-col a:hover{color:white}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px}
-.footer-bottom a{color:rgba(255,255,255,0.4);text-decoration:none}
-.footer-bottom a:hover{color:white}
+.footer-brand{max-width:300px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--teal),var(--teal-deep));border-radius:8px;display:flex;align-items:center;justify-content:center}
+.footer-logo-icon svg{width:16px;height:16px;fill:none;stroke:#06231f;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.footer-logo-text{font-size:18px;font-weight:700;color:var(--text)}
+.footer-tag{font-size:13px;color:var(--text3);line-height:1.6}
+.footer-col h4{font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.footer-col a{display:block;font-size:13.5px;color:var(--text2);text-decoration:none;margin-bottom:9px;transition:color .15s}
+.footer-col a:hover{color:var(--teal-bright)}
+.footer-bot{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12.5px;color:var(--text3)}
+.footer-bot a{color:var(--text3);text-decoration:none}
+.footer-bot a:hover{color:var(--text2)}
 
-@media(min-width:640px){
+@media(min-width:720px){
+  .pillar-grid{grid-template-columns:repeat(3,1fr);max-width:none}
+  .pillar{flex-direction:column}
   .feat-grid{grid-template-columns:repeat(3,1fr)}
-  .price-grid{flex-direction:row;align-items:flex-start}
+  .price-grid{flex-direction:row;align-items:stretch}
   .price-card{flex:1}
 }
-@media(max-width:480px){
-  .feat-grid{grid-template-columns:1fr}
-  .phones-wrap{gap:8px}
-  .phone-frame{width:160px}
-  .compare-table{font-size:12px}
+@media(max-width:520px){
+  .nav-links .nav-link{display:none}
+  .phones{gap:10px}
+  .phone{width:168px}
 }
 </style>
 </head>
@@ -194,13 +220,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <div class="nav-logo-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </div>
+      <span class="nav-logo-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
       <span class="nav-logo-text">Privilio</span>
     </a>
     <div class="nav-links">
       <a href="#features" class="nav-link">Features</a>
+      <a href="#how" class="nav-link">How it works</a>
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#pricing" class="nav-cta">Get started free</a>
@@ -210,276 +235,226 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge"><i class="ti ti-lock"></i> End-to-end encrypted · Zero-knowledge sync</div>
-  <h1>Your contacts.<br><em>Fully private.</em></h1>
-  <p class="hero-sub">Privilio syncs your whole network across your devices — end-to-end encrypted with a passphrase only you know. We store only ciphertext, so not even we can read it.</p>
-  <div class="hero-btns">
-    <a href="#pricing" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
-    <a href="#how-it-works" class="btn-ghost"><i class="ti ti-eye"></i> See how it works</a>
-  </div>
-  <p class="hero-note">Free plan available · No credit card required · privilio.ca</p>
-  <div class="hero-stores">
-    <a href="#" class="store-btn"><i class="ti ti-brand-apple"></i> App Store</a>
-    <a href="#" class="store-btn"><i class="ti ti-brand-google-play"></i> Google Play</a>
+  <div class="hero-inner">
+    <div class="hero-badge"><i class="ti ti-lock"></i> End-to-end encrypted · Zero-knowledge</div>
+    <h1>Your contacts.<br><em>Fully private.</em></h1>
+    <p class="hero-sub">Privilio syncs your whole network across your devices — end-to-end encrypted with a passphrase only you know. We store only ciphertext, so not even we can read it.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
+      <a href="#how" class="btn-ghost"><i class="ti ti-eye"></i> See how it works</a>
+    </div>
+    <p class="hero-note">Free plan available · No credit card required · privilio.ca</p>
+    <div class="hero-stores">
+      <a href="#" class="store-btn"><i class="ti ti-brand-apple"></i> App Store</a>
+      <a href="#" class="store-btn"><i class="ti ti-brand-google-play"></i> Google Play</a>
+    </div>
   </div>
 </section>
 
 <!-- PHONE MOCKUPS -->
-<section class="mockup-section">
-  <div class="phones-wrap">
+<section class="mockup">
+  <div class="phones">
 
-    <!-- Contacts screen -->
-    <div class="phone-frame">
-      <div class="ph-notch"><div class="ph-pill"></div></div>
-      <div class="ph-screen">
-        <div class="ph-vault-header" style="color:var(--pri)">Privilio<div style="font-size:8px;font-weight:500;color:var(--text3)">Your private network</div></div>
-        <div class="ph-vault-stat"><span>🔍 Search contacts…</span></div>
-        <div style="display:flex;gap:4px;padding:6px 10px;font-size:8px;font-weight:600">
-          <span style="background:var(--pri);color:white;padding:2px 8px;border-radius:9px">All</span>
-          <span style="color:var(--text3);padding:2px 6px">VIP</span>
-          <span style="color:var(--text3);padding:2px 6px">Work</span>
-          <span style="color:var(--text3);padding:2px 6px">Investor</span>
+    <!-- Unlock screen -->
+    <div class="ph-wrap">
+      <div class="phone">
+        <div class="ph-inner">
+          <div class="ph-notch"><div class="ph-pill"></div></div>
+          <div class="ph-unlock">
+            <div class="ph-lockico"><i class="ti ti-lock"></i></div>
+            <div class="ph-ul-title">Unlock your contacts</div>
+            <div class="ph-ul-sub">Enter your passphrase to decrypt your data on this device.</div>
+            <div class="ph-ul-input"><span>Passphrase</span><i class="ti ti-eye"></i></div>
+            <div class="ph-ul-btn"><i class="ti ti-lock-open" style="font-size:9px"></i> Unlock</div>
+            <div class="ph-ul-link"><i class="ti ti-shield" style="font-size:8px"></i> Use recovery code instead</div>
+          </div>
         </div>
-        <div class="ph-vault-item">
-          <div class="ph-av" style="background:#1f6f5c;color:#9FE1CB;font-size:9px">SC</div>
-          <div style="flex:1"><div class="ph-vault-name">Sarah Chen</div><div class="ph-vault-meta">COO · Maple Tech Group</div></div>
-          <span style="font-size:7px;font-weight:600;color:#C58A1C">VIP · 2d</span>
-        </div>
-        <div class="ph-vault-item">
-          <div class="ph-av" style="background:#3b2f7a;color:#CECBF6;font-size:9px">AT</div>
-          <div style="flex:1"><div class="ph-vault-name">Aisha Torres</div><div class="ph-vault-meta">VP Product · Stripe</div></div>
-          <span style="font-size:7px;font-weight:600;color:var(--pri)">Work · 1w</span>
-        </div>
-        <div class="ph-vault-item">
-          <div class="ph-av" style="background:#5a2b1a;color:#F5C4B3;font-size:9px">DO</div>
-          <div style="flex:1"><div class="ph-vault-name">David Okafor</div><div class="ph-vault-meta">Partner · Bay Street Legal</div></div>
-          <span style="font-size:7px;font-weight:600;color:var(--pri)">Work · 2w</span>
-        </div>
-        <div class="ph-vault-item" style="background:var(--pri-pale)">
-          <div class="ph-vault-icon">🔐</div>
-          <div style="flex:1"><div class="ph-vault-name">Vault · 6 contacts</div><div class="ph-vault-meta">Private · PIN protected</div></div>
-          <span class="ph-vault-lock">🔒</span>
-        </div>
-      </div>
-      <div class="ph-bnav">
-        <div class="ph-bni on"><i class="ti ti-users"></i><span>Contacts</span></div>
-        <div class="ph-bni"><i class="ti ti-user-plus"></i><span>Add</span></div>
-        <div class="ph-bni"><i class="ti ti-vault"></i><span>Vault</span></div>
-        <div class="ph-bni"><i class="ti ti-settings"></i><span>Settings</span></div>
       </div>
     </div>
 
-    <!-- Vault screen -->
-    <div class="phone-frame">
-      <div class="ph-notch"><div class="ph-pill"></div></div>
-      <div class="ph-screen">
-        <div class="ph-vault-header">Vault 🔐</div>
-        <div class="ph-vault-stat"><span>6 private contacts</span><span style="color:var(--pri)">PIN locked</span></div>
-        <div style="height:6px"></div>
-        <div class="ph-vault-item">
-          <div class="ph-av" style="background:#5a4a14;color:#FAC775;font-size:9px">DW</div>
-          <div style="flex:1"><div class="ph-vault-name">David Walsh</div><div class="ph-vault-meta">Solicitor · private</div></div>
-          <span class="ph-vault-lock">🔒</span>
-        </div>
-        <div class="ph-vault-item">
-          <div class="ph-av" style="background:#5a2b1a;color:#F5C4B3;font-size:9px">MH</div>
-          <div style="flex:1"><div class="ph-vault-name">M. Harrison</div><div class="ph-vault-meta">Investor · private</div></div>
-          <span class="ph-vault-lock">🔒</span>
-        </div>
-        <div class="ph-vault-item">
-          <div class="ph-av" style="background:#3b2f7a;color:#CECBF6;font-size:9px">TK</div>
-          <div style="flex:1"><div class="ph-vault-name">Tom K.</div><div class="ph-vault-meta">Personal · private</div></div>
-          <span class="ph-vault-lock">🔒</span>
-        </div>
-        <div style="padding:8px;text-align:center">
-          <div style="font-size:8px;color:var(--text3)">Encrypted on your device · Privilio cannot read these contacts</div>
+    <!-- Contacts screen -->
+    <div class="ph-wrap" style="margin-top:26px">
+      <div class="ph-badge">Synced</div>
+      <div class="phone">
+        <div class="ph-inner">
+          <div class="ph-notch"><div class="ph-pill"></div></div>
+          <div class="ph-head">
+            <div><div class="ph-brand">Privilio</div><div class="ph-brandsub">Your private network</div></div>
+            <div class="ph-plus"><i class="ti ti-plus"></i></div>
+          </div>
+          <div class="ph-search"><i class="ti ti-search" style="font-size:9px"></i> Search contacts…</div>
+          <div class="ph-chips">
+            <span class="ph-chip on">All</span><span class="ph-chip">VIP</span><span class="ph-chip">Work</span><span class="ph-chip">Investor</span>
+          </div>
+          <div class="ph-row"><div class="ph-av" style="background:#1f6f5c;color:#9FE1CB">SC</div><div style="flex:1"><div class="ph-nm">Sarah Chen</div><div class="ph-mt">COO · Maple Tech</div></div><span class="ph-tag" style="color:var(--gold)">VIP · 2d</span></div>
+          <div class="ph-row"><div class="ph-av" style="background:#3b2f7a;color:#CECBF6">AT</div><div style="flex:1"><div class="ph-nm">Aisha Torres</div><div class="ph-mt">VP Product · Stripe</div></div><span class="ph-tag" style="color:var(--blue)">Work · 1w</span></div>
+          <div class="ph-row"><div class="ph-av" style="background:#5a2b1a;color:#F5C4B3">DO</div><div style="flex:1"><div class="ph-nm">David Okafor</div><div class="ph-mt">Partner · Bay Street</div></div><span class="ph-tag" style="color:var(--blue)">Work · 2w</span></div>
+          <div class="ph-row"><div class="ph-av" style="background:#1d4e44;color:var(--teal-bright)">PN</div><div style="flex:1"><div class="ph-nm">Priya Nair</div><div class="ph-mt">Angel Investor</div></div><span class="ph-tag" style="color:var(--green)">Inv · 1mo</span></div>
+          <div class="ph-bnav">
+            <div class="ph-bni on"><i class="ti ti-users"></i><span>Contacts</span></div>
+            <div class="ph-bni"><i class="ti ti-user-plus"></i><span>Add</span></div>
+            <div class="ph-bni"><i class="ti ti-lock"></i><span>Vault</span></div>
+            <div class="ph-bni"><i class="ti ti-settings"></i><span>Settings</span></div>
+          </div>
         </div>
       </div>
-      <div class="ph-bnav">
-        <div class="ph-bni"><i class="ti ti-users"></i><span>Contacts</span></div>
-        <div class="ph-bni"><i class="ti ti-user-plus"></i><span>Add</span></div>
-        <div class="ph-bni on"><i class="ti ti-vault"></i><span>Vault</span></div>
-        <div class="ph-bni"><i class="ti ti-settings"></i><span>Settings</span></div>
-      </div>
+      <div class="ph-fab"><i class="ti ti-plus"></i></div>
     </div>
 
   </div>
 </section>
 
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="pillar-grid">
+    <div class="pillar">
+      <div class="pillar-ico"><i class="ti ti-lock"></i></div>
+      <div><h3>End-to-end encrypted</h3><p>Your contacts are encrypted with a passphrase only you know — before they ever leave your device.</p></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-ico"><i class="ti ti-refresh"></i></div>
+      <div><h3>Synced everywhere</h3><p>Add a contact on your phone, see it on the web. Your network stays with you across devices.</p></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-ico"><i class="ti ti-shield-check"></i></div>
+      <div><h3>Zero-knowledge</h3><p>We store only ciphertext. We can't read your contacts — and neither can anyone else.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- TRUST BAR -->
-<div class="trust-bar">
+<div class="trust">
   <div class="trust-inner">
-    <div class="trust-item"><i class="ti ti-lock"></i> End-to-end encrypted</div>
+    <div class="trust-item"><i class="ti ti-key"></i> Passphrase-based encryption</div>
     <div class="trust-item"><i class="ti ti-refresh"></i> Synced across your devices</div>
-    <div class="trust-item"><i class="ti ti-eye-off"></i> Zero-knowledge — we store only ciphertext</div>
-    <div class="trust-item"><i class="ti ti-key"></i> PIN-protected vault</div>
+    <div class="trust-item"><i class="ti ti-eye-off"></i> We store only ciphertext</div>
+    <div class="trust-item"><i class="ti ti-lock"></i> PIN-protected vault</div>
     <div class="trust-item"><i class="ti ti-flag"></i> Built in Canada 🇨🇦</div>
   </div>
 </div>
 
 <!-- HOW IT WORKS -->
-<section class="hiw" id="how-it-works">
+<section class="section" id="how">
   <div class="section-label">How it works</div>
   <h2 class="section-title">Private by design,<br>encrypted before it leaves.</h2>
   <p class="section-sub">Your contacts are encrypted on your device with a passphrase only you know, then synced so you can reach them anywhere. We only ever store ciphertext.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <div>
-        <div class="step-title">Add contacts on any device</div>
-        <div class="step-desc">Capture a name, role, company, email, phone, tags, and a note. Add a contact on your phone and see it on the web — your network stays with you across devices.</div>
-      </div>
+      <div><div class="step-title">Add contacts on any device</div><div class="step-desc">Capture a name, role, company, email, phone, tags, and a note. Add on your phone and see it on the web — your network follows you across devices.</div></div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div>
-        <div class="step-title">Encrypted with your passphrase</div>
-        <div class="step-desc">Before anything is synced, every contact is end-to-end encrypted on your device with a passphrase only you know. Your passphrase never reaches our servers.</div>
-      </div>
+      <div><div class="step-title">Encrypted with your passphrase</div><div class="step-desc">Before anything syncs, every contact is end-to-end encrypted on your device with a passphrase only you know. Your passphrase never reaches our servers.</div></div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div>
-        <div class="step-title">We store only ciphertext</div>
-        <div class="step-desc">All our servers ever hold is an encrypted blob — mathematical noise without your passphrase. We can't read your contacts, and neither can anyone who breaches, subpoenas, or buys the database.</div>
-      </div>
+      <div><div class="step-title">We store only ciphertext</div><div class="step-desc">All our servers ever hold is an encrypted blob — mathematical noise without your passphrase. We can't read your contacts, and neither can anyone who breaches, subpoenas, or buys the database.</div></div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div>
-        <div class="step-title">Lock your most private people away</div>
-        <div class="step-desc">Move sensitive contacts into a PIN-protected vault, hidden from your main list. And you can export your whole network to a JSON file anytime — you're never locked in.</div>
-      </div>
+      <div><div class="step-title">Lock your most private people away</div><div class="step-desc">Move sensitive contacts into a PIN-protected vault, hidden from your main list. And you can export your whole network to a JSON file anytime — you're never locked in.</div></div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="features" id="features">
+<section class="section" id="features" style="background:var(--bg2)">
   <div class="section-label">Features</div>
   <h2 class="section-title">Everything private.<br>Nothing compromised.</h2>
   <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon" style="background:var(--pri-pale)">👥</div>
-      <div class="feat-title">Private contact manager</div>
-      <div class="feat-desc">Organize, tag, and search every contact. Your most sensitive relationships live in an encrypted vault, hidden from your main list.</div>
-      <div class="feat-badge">✓ Zero knowledge vault</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:#ECFDF5">🔐</div>
-      <div class="feat-title">PIN-protected vault</div>
-      <div class="feat-desc">Move your most sensitive contacts into a vault locked behind a 4-digit PIN. Hidden from your main list, encrypted on your device.</div>
-      <div class="feat-badge">✓ Encrypted on device</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:#FEF3C7">📝</div>
-      <div class="feat-title">Notes & follow-ups</div>
-      <div class="feat-desc">Attach a private note to anyone — how you met, context, reminders — and see at a glance when you were last in touch.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:#FEE2E2">🛡️</div>
-      <div class="feat-title">Zero-knowledge storage</div>
-      <div class="feat-desc">Our servers store only ciphertext. No ads, no tracking, no profiles — even our own engineers can't read your contacts.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:#EDE9FE">🏷️</div>
-      <div class="feat-title">Tags & categories</div>
-      <div class="feat-desc">Sort your network with VIP, Work, Personal, and Investor tags, then filter and search instantly to find anyone.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:#F0FDF4">🔄</div>
-      <div class="feat-title">Synced everywhere</div>
-      <div class="feat-desc">Add a contact on your phone, see it on the web. Your encrypted network follows you across devices — and you can export it to JSON anytime.</div>
-      <div class="feat-badge">✓ Across devices</div>
-    </div>
+    <div class="feat-card"><div class="feat-ico">👥</div><div class="feat-title">Private contact manager</div><div class="feat-desc">Organize, tag, and search every contact. Your most sensitive relationships live in a PIN-protected vault, hidden from your main list.</div><div class="feat-badge">✓ Zero-knowledge vault</div></div>
+    <div class="feat-card"><div class="feat-ico">🔄</div><div class="feat-title">Synced everywhere</div><div class="feat-desc">Add a contact on your phone, see it on the web. Your encrypted network follows you across devices — and exports to JSON anytime.</div><div class="feat-badge">✓ Across devices</div></div>
+    <div class="feat-card"><div class="feat-ico">🔐</div><div class="feat-title">PIN-protected vault</div><div class="feat-desc">Move your most sensitive contacts behind a 4-digit PIN. Hidden from your main list, on top of end-to-end encryption.</div><div class="feat-badge">✓ Extra layer</div></div>
+    <div class="feat-card"><div class="feat-ico">📝</div><div class="feat-title">Notes & follow-ups</div><div class="feat-desc">Attach a private note to anyone — how you met, context, reminders — and see at a glance when you were last in touch.</div></div>
+    <div class="feat-card"><div class="feat-ico">🏷️</div><div class="feat-title">Tags & categories</div><div class="feat-desc">Sort your network with VIP, Work, Personal, and Investor tags, then filter and search instantly to find anyone.</div></div>
+    <div class="feat-card"><div class="feat-ico">🛡️</div><div class="feat-title">Zero-knowledge storage</div><div class="feat-desc">Our servers store only ciphertext. No ads, no tracking, no profiles — even our own engineers can't read your contacts.</div><div class="feat-badge">✓ We can't read it</div></div>
   </div>
 </section>
 
 <!-- COMPARISON -->
-<section class="comparison">
+<section class="section">
   <div class="section-label">Why Privilio</div>
   <h2 class="section-title">How we compare.</h2>
-  <div style="overflow-x:auto;margin-top:2.5rem">
-    <table class="compare-table">
+  <div class="compare-wrap">
+    <table class="compare">
       <thead>
-        <tr>
-          <th>Feature</th>
-          <th class="pri-col">Privilio</th>
-          <th>Google Contacts</th>
-          <th>iCloud Contacts</th>
-          <th>Notes apps</th>
-        </tr>
+        <tr><th>Feature</th><th class="pri">Privilio</th><th>Google Contacts</th><th>iCloud Contacts</th><th>Notes apps</th></tr>
       </thead>
       <tbody>
-        <tr><td>Encrypted contact vault</td><td class="pri-col"><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
-        <tr><td>End-to-end encrypted sync</td><td class="pri-col"><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="partial">Partial</span></td><td><span class="cross">✗</span></td></tr>
-        <tr><td>Private notes per contact</td><td class="pri-col"><span class="check">✓</span></td><td><span class="partial">Partial</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Zero-knowledge (we can't read it)</td><td class="pri-col"><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
-        <tr><td>No data harvesting</td><td class="pri-col"><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="partial">Partial</span></td><td><span class="partial">Partial</span></td></tr>
-        <tr><td>No advertising</td><td class="pri-col"><span class="check">✓</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Built in Canada</td><td class="pri-col"><span class="check">✓ 🇨🇦</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td></tr>
+        <tr><td>End-to-end encrypted sync</td><td class="pri"><span class="yes">✓</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="partial">Partial</span></td><td class="col"><span class="no">✗</span></td></tr>
+        <tr><td>Encrypted contact vault</td><td class="pri"><span class="yes">✓</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="no">✗</span></td></tr>
+        <tr><td>Zero-knowledge (we can't read it)</td><td class="pri"><span class="yes">✓</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="no">✗</span></td></tr>
+        <tr><td>Private notes per contact</td><td class="pri"><span class="yes">✓</span></td><td class="col"><span class="partial">Partial</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="yes">✓</span></td></tr>
+        <tr><td>No data harvesting</td><td class="pri"><span class="yes">✓</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="partial">Partial</span></td><td class="col"><span class="partial">Partial</span></td></tr>
+        <tr><td>No advertising</td><td class="pri"><span class="yes">✓</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="yes">✓</span></td><td class="col"><span class="yes">✓</span></td></tr>
+        <tr><td>Built in Canada</td><td class="pri"><span class="yes">✓ 🇨🇦</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="no">✗</span></td><td class="col"><span class="no">✗</span></td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="pricing" id="pricing">
+<section class="section" id="pricing" style="background:var(--bg2)">
   <div class="section-label">Pricing</div>
   <h2 class="section-title">Simple, honest pricing.</h2>
-  <p class="section-sub" style="max-width:480px">Start free. Upgrade once for unlimited everything. No ads, no data harvesting — and everything is end-to-end encrypted.</p>
+  <p class="section-sub">Start free. Upgrade once for unlimited everything. No ads, no data harvesting — and everything is end-to-end encrypted.</p>
   <div class="price-grid">
     <div class="price-card">
       <div class="price-tier">Free</div>
-      <div class="price-amount"><span class="price-val">$0</span></div>
-      <div class="price-yearly" style="color:var(--text3)">Forever free</div>
-      <ul class="price-features">
-        <li><i class="ti ti-check"></i>Up to 50 contacts</li>
-        <li><i class="ti ti-check"></i>PIN-protected vault</li>
-        <li><i class="ti ti-check"></i>Tags, notes & follow-ups</li>
-        <li><i class="ti ti-check"></i>JSON export & import</li>
+      <div class="price-amt"><span class="price-val">$0</span></div>
+      <div class="price-note">Forever free</div>
+      <ul class="price-feats">
+        <li><i class="ti ti-check"></i> Up to 50 contacts</li>
+        <li><i class="ti ti-check"></i> Encrypted sync</li>
+        <li><i class="ti ti-check"></i> PIN-protected vault</li>
+        <li><i class="ti ti-check"></i> Tags, notes & follow-ups</li>
+        <li><i class="ti ti-check"></i> JSON export & import</li>
       </ul>
-      <button class="price-btn price-btn-out">Get started free</button>
+      <button class="price-btn">Get started free</button>
     </div>
-    <div class="price-card featured">
+    <div class="price-card feat">
       <div class="price-tier">Pro</div>
-      <div class="price-amount"><span class="price-val">$4.99</span><span class="price-period">/mo</span></div>
-      <div class="price-yearly">or $39.99/year — save 33%</div>
-      <ul class="price-features">
-        <li><i class="ti ti-check"></i>Unlimited contacts</li>
-        <li><i class="ti ti-check"></i>Unlimited vault contacts</li>
-        <li><i class="ti ti-check"></i>Unlimited notes</li>
-        <li><i class="ti ti-check"></i>Priority support</li>
+      <div class="price-amt"><span class="price-val">$4.99</span><span class="price-per">/mo</span></div>
+      <div class="price-note">or $39.99/year — save 33%</div>
+      <ul class="price-feats">
+        <li><i class="ti ti-check"></i> Everything in Free</li>
+        <li><i class="ti ti-check"></i> Unlimited contacts</li>
+        <li><i class="ti ti-check"></i> Unlimited notes</li>
+        <li><i class="ti ti-check"></i> Unlimited vault contacts</li>
+        <li><i class="ti ti-check"></i> Priority support</li>
       </ul>
-      <button class="price-btn price-btn-pri">Upgrade to Pro</button>
+      <button class="price-btn fill">Upgrade to Pro</button>
     </div>
     <div class="price-card">
       <div class="price-tier">Lifetime</div>
-      <div class="price-amount"><span class="price-val">$79.99</span></div>
-      <div class="price-yearly">One-time payment</div>
-      <ul class="price-features">
-        <li><i class="ti ti-check"></i>Everything in Pro</li>
-        <li><i class="ti ti-check"></i>Pay once, yours forever</li>
-        <li><i class="ti ti-check"></i>All future updates</li>
-        <li><i class="ti ti-check"></i>Priority support</li>
+      <div class="price-amt"><span class="price-val">$79.99</span></div>
+      <div class="price-note">One-time payment</div>
+      <ul class="price-feats">
+        <li><i class="ti ti-check"></i> Everything in Pro</li>
+        <li><i class="ti ti-check"></i> Pay once, yours forever</li>
+        <li><i class="ti ti-check"></i> All future updates</li>
+        <li><i class="ti ti-check"></i> Priority support</li>
       </ul>
-      <button class="price-btn price-btn-out">Buy Lifetime</button>
+      <button class="price-btn">Buy Lifetime</button>
     </div>
   </div>
 </section>
 
-<!-- AUDIT / OPEN SOURCE -->
-<section class="audit">
-  <h2>We sync your contacts.<br>But we can't read a single one.</h2>
-  <p>Most "private" apps send your data to the cloud and ask you to trust them with it. Privilio syncs across your devices too — but everything is end-to-end encrypted with a passphrase only you know. Our servers only ever hold ciphertext, so even if our database were hacked, subpoenaed, or sold, there'd be nothing readable in it.</p>
-  <div class="audit-links">
-    <a href="#pricing" class="audit-btn audit-btn-white"><i class="ti ti-download"></i> Get started free</a>
-    <a href="#how-it-works" class="audit-btn audit-btn-outline"><i class="ti ti-eye"></i> See how it works</a>
+<!-- AUDIT BAND -->
+<section class="section" style="padding-left:0;padding-right:0">
+  <div class="audit">
+    <h2>We sync your contacts.<br>But we can't read a single one.</h2>
+    <p>Most "private" apps send your data to the cloud and ask you to trust them with it. Privilio syncs across your devices too — but everything is end-to-end encrypted with a passphrase only you know. Our servers only ever hold ciphertext, so even if our database were hacked, subpoenaed, or sold, there'd be nothing readable in it.</p>
+    <div class="audit-links">
+      <a href="#pricing" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
+      <a href="#how" class="btn-ghost"><i class="ti ti-eye"></i> See how it works</a>
+    </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
+<section class="section" id="faq">
   <div class="section-label">FAQ</div>
   <h2 class="section-title">Common questions.</h2>
   <div class="faq-list">
@@ -492,20 +467,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
       <div class="faq-a">Because your contacts are synced (encrypted), you can sign in on a new device, enter your passphrase, and your whole network is restored. Just remember your passphrase — it never leaves your device, so if you forget it, even we can't recover your data. You can also keep a JSON export as an extra backup.</div>
     </div>
     <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is the recovery code for? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">When you set up Privilio you're given a one-time recovery code — a backup way to unlock your encrypted data if you forget your passphrase. Store it somewhere safe and offline. Without either your passphrase or your recovery code, your data is unrecoverable by design.</div>
+    </div>
+    <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Is Privilio subject to Canadian surveillance laws? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Privilio is built by a Canadian company and respects Canadian law. But because of our zero-knowledge design, the only thing we could ever produce in response to a court order is encrypted ciphertext — useless without your passphrase, which we never have. We can't decrypt your contacts for anyone.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">How is the vault protected? <i class="ti ti-plus"></i></button>
-      <div class="faq-a">Any contact you mark as private moves into your vault, which is locked behind a 4-digit PIN you set in Settings. Vault contacts are hidden from your main list, on top of the end-to-end encryption that already protects everything. You can change or remove the vault PIN at any time from Settings.</div>
+      <div class="faq-a">Any contact you mark as private moves into your vault, locked behind a 4-digit PIN you set in Settings — on top of the end-to-end encryption that already protects everything. Vault contacts are hidden from your main list. You can change or remove the vault PIN anytime.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Does Privilio work offline? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Yes. You can browse and edit your contacts offline, and your changes sync — still encrypted — the next time you're online. You always have a working copy on the device you're using.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">When is the mobile app coming? <i class="ti ti-plus"></i></button>
-      <div class="faq-a">Privilio is a native mobile app for iPhone and Android, built with React Native, and your encrypted network is reachable on the web too. The mobile apps are in active development now, with App Store and Google Play releases on the way.</div>
     </div>
   </div>
 </section>
@@ -515,58 +490,50 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo">
-        <div class="footer-logo-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
+        <span class="footer-logo-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
         <span class="footer-logo-text">Privilio</span>
       </div>
-      <p class="footer-tagline">Your contacts. Fully private. An end-to-end encrypted contact manager that syncs across your devices — we only ever store ciphertext. Built in Canada.</p>
+      <p class="footer-tag">Your contacts. Fully private. An end-to-end encrypted contact manager that syncs across your devices — we only ever store ciphertext. Built in Canada.</p>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
       <a href="#features">Features</a>
-      <a href="#how-it-works">How it works</a>
+      <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
-      <a href="#">Changelog</a>
+      <a href="#faq">FAQ</a>
     </div>
     <div class="footer-col">
       <h4>Privacy</h4>
-      <a href="#how-it-works">How it works</a>
-      <a href="#faq">Privacy FAQ</a>
-      <a href="#">Responsible disclosure</a>
-      <a href="#faq">Data export</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/terms">Terms of service</a>
+      <a href="#how">How encryption works</a>
+      <a href="#faq">Recovery & backup</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="#">About</a>
       <a href="#">Blog</a>
-      <a href="/privacy">Privacy policy</a>
-      <a href="/terms">Terms of service</a>
+      <a href="#">Contact</a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bot">
     <span>© 2026 Privilio · Adapting Services Limited · privilio.ca</span>
     <div style="display:flex;gap:16px">
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
-      <a href="/#how-it-works">Security</a>
+      <a href="#how">Security</a>
     </div>
   </div>
 </footer>
 
 <script>
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  item.classList.toggle('open');
-}
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id === '#') return;
-    const el = document.querySelector(id);
-    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function toggleFaq(btn){ btn.closest('.faq-item').classList.toggle('open'); }
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=a.getAttribute('href');
+    if(id==='#')return;
+    var el=document.querySelector(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
 </script>
