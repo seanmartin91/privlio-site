@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — Privilio</title>
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--pri:#2DD4BF;--pri-bright:#5EEAD4;--text:#E8EEF4;--text2:#9FB0C0;--text3:#647386;--border:rgba(255,255,255,0.08);--surface:#121A26}
@@ -11,8 +13,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 .nav{background:rgba(10,14,21,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 max(1.5rem,calc(50% - 560px));position:sticky;top:0;z-index:10}
 .nav-inner{height:56px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-size:18px;font-weight:700}
-.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,#2DD4BF,#0D9488);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.logo-icon svg{width:16px;height:16px;fill:none;stroke:#06231f;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.logo-icon{width:32px;height:32px;border-radius:8px;object-fit:cover;display:block}
 .back{font-size:13px;color:var(--pri);text-decoration:none;font-weight:500}
 .hero{background:var(--surface);padding:4rem max(1.5rem,calc(50% - 560px)) 3rem;border-bottom:1px solid var(--border)}
 .hero h1{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:10px}
@@ -31,7 +32,7 @@ strong{color:#fff}
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="logo">
-      <div class="logo-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <img src="/logo.png" alt="Privilio logo" class="logo-icon">
       Privilio
     </a>
     <a href="/" class="back">← Back to privilio.ca</a>
