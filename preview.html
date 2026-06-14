@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Privilio — Preview</title>
+<link rel="icon" type="image/png" href="/logo.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -33,7 +34,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 /* --- NAV BAR --- */
 .top-nav{position:sticky;top:0;background:rgba(10,14,21,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 1rem;height:52px;display:flex;align-items:center;justify-content:space-between;z-index:50}
 .nav-logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600}
-.nav-icon{width:28px;height:28px;background:var(--pri);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px}
+.nav-icon{width:30px;height:30px;border-radius:7px;object-fit:cover;display:block}
 .nav-btn{font-size:13px;font-weight:500;color:white;background:var(--pri);border:none;cursor:pointer;padding:7px 16px;border-radius:var(--radius-sm)}
 
 /* --- HERO --- */
@@ -273,7 +274,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 /* footer */
 .footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.5rem 1.25rem}
 .footer-logo{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin-bottom:1rem}
-.footer-icon{width:22px;height:22px;background:var(--pri);border-radius:5px;display:flex;align-items:center;justify-content:center;color:white;font-size:11px}
+.footer-icon{width:24px;height:24px;border-radius:5px;object-fit:cover;display:block}
 .footer-links{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
 .footer-links a{font-size:13px;color:var(--text3);text-decoration:none}
 .footer-copy{font-size:12px;color:var(--text3)}
@@ -284,7 +285,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 <!-- HOME PAGE -->
 <div class="page active" id="pg-home">
   <div class="top-nav">
-    <div class="nav-logo"><div class="nav-icon"><i class="ti ti-lock"></i></div>Privilio</div>
+    <div class="nav-logo"><img src="/logo.png" alt="Privilio logo" class="nav-icon">Privilio</div>
     <button class="nav-btn">Get started</button>
   </div>
 
@@ -372,7 +373,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
   </div>
 
   <div class="footer">
-    <div class="footer-logo"><div class="footer-icon"><i class="ti ti-lock"></i></div>Privilio</div>
+    <div class="footer-logo"><img src="/logo.png" alt="Privilio logo" class="footer-icon">Privilio</div>
     <div class="footer-links"><a>Privacy</a><a>Terms</a><a>Security</a><a>Blog</a><a>Contact</a></div>
     <div class="footer-copy">© 2026 Privilio. All rights reserved.</div>
   </div>
@@ -381,7 +382,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
 <!-- VAULT PAGE -->
 <div class="page" id="pg-vault">
   <div class="top-nav">
-    <div class="nav-logo"><div class="nav-icon"><i class="ti ti-lock"></i></div>Privilio</div>
+    <div class="nav-logo"><img src="/logo.png" alt="Privilio logo" class="nav-icon">Privilio</div>
     <button class="nav-btn" onclick="switchTab('onboard')">Try free</button>
   </div>
 
@@ -435,13 +436,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
     <p>Your vault is built in and free — protected by your PIN.</p>
     <button class="btn-white" onclick="switchTab('pricing')">See pricing</button>
   </div>
-  <div class="footer"><div class="footer-logo"><div class="footer-icon"><i class="ti ti-lock"></i></div>Privilio</div><div class="footer-links"><a>Privacy</a><a>Terms</a><a>Security</a></div><div class="footer-copy">© 2026 Privilio.</div></div>
+  <div class="footer"><div class="footer-logo"><img src="/logo.png" alt="Privilio logo" class="footer-icon">Privilio</div><div class="footer-links"><a>Privacy</a><a>Terms</a><a>Security</a></div><div class="footer-copy">© 2026 Privilio.</div></div>
 </div>
 
 <!-- PRICING PAGE -->
 <div class="page" id="pg-pricing">
   <div class="top-nav">
-    <div class="nav-logo"><div class="nav-icon"><i class="ti ti-lock"></i></div>Privilio</div>
+    <div class="nav-logo"><img src="/logo.png" alt="Privilio logo" class="nav-icon">Privilio</div>
     <button class="nav-btn" onclick="switchTab('onboard')">Start free</button>
   </div>
 
@@ -485,7 +486,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:va
     <div class="trust-badge"><i class="ti ti-x"></i>Cancel anytime</div>
   </div>
 
-  <div class="footer"><div class="footer-logo"><div class="footer-icon"><i class="ti ti-lock"></i></div>Privilio</div><div class="footer-links"><a>Privacy</a><a>Terms</a><a>Security</a></div><div class="footer-copy">© 2026 Privilio.</div></div>
+  <div class="footer"><div class="footer-logo"><img src="/logo.png" alt="Privilio logo" class="footer-icon">Privilio</div><div class="footer-links"><a>Privacy</a><a>Terms</a><a>Security</a></div><div class="footer-copy">© 2026 Privilio.</div></div>
 </div>
 
 <!-- ONBOARDING PAGE -->
