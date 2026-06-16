@@ -60,6 +60,9 @@ a{color:inherit}
 .store-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--border2);border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-weight:600;color:var(--text2);text-decoration:none;transition:border-color .15s,color .15s;background:var(--surface)}
 .store-btn:hover{border-color:var(--teal);color:var(--text)}
 .store-btn i{font-size:20px}
+.store-btn-soon{cursor:default;opacity:.6}
+.store-btn-soon:hover{border-color:var(--border2);color:var(--text2)}
+.soon-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 7px;border-radius:999px;background:var(--border2);color:var(--text)}
 
 /* ── PHONE MOCKUPS ── */
 .mockup{position:relative;padding:1rem max(1.5rem,calc(50% - 580px)) 5rem;display:flex;justify-content:center}
@@ -178,7 +181,7 @@ a{color:inherit}
 .price-feats{list-style:none;font-size:13.5px;color:var(--text2);line-height:1;margin-bottom:22px}
 .price-feats li{display:flex;align-items:center;gap:9px;padding:7px 0}
 .price-feats li i{color:var(--teal);font-size:15px;flex-shrink:0}
-.price-btn{width:100%;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius-sm);cursor:pointer;border:1.5px solid var(--border2);background:transparent;color:var(--text);transition:.15s}
+.price-btn{display:block;width:100%;text-align:center;text-decoration:none;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius-sm);cursor:pointer;border:1.5px solid var(--border2);background:transparent;color:var(--text);transition:.15s}
 .price-btn:hover{border-color:var(--teal);color:var(--teal-bright)}
 .price-btn.fill{background:var(--teal);color:#04201c;border-color:var(--teal)}
 .price-btn.fill:hover{background:var(--teal-bright);color:#04201c}
@@ -241,7 +244,7 @@ a{color:inherit}
       <a href="#how" class="nav-link">How it works</a>
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#pricing" class="nav-cta">Get started free</a>
+      <a href="https://asset-manager-contact-list.replit.app" target="_blank" rel="noopener" class="nav-cta">Get started free</a>
     </div>
   </div>
 </nav>
@@ -253,13 +256,13 @@ a{color:inherit}
     <h1>Your contacts.<br><em>Fully private.</em></h1>
     <p class="hero-sub">Privilio syncs your whole network across your devices — end-to-end encrypted with a passphrase only you know. We store only ciphertext, so not even we can read it.</p>
     <div class="hero-btns">
-      <a href="#pricing" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
+      <a href="https://asset-manager-contact-list.replit.app" target="_blank" rel="noopener" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
       <a href="#how" class="btn-ghost"><i class="ti ti-eye"></i> See how it works</a>
     </div>
     <p class="hero-note">Free plan available · No credit card required · privilio.ca</p>
     <div class="hero-stores">
-      <a href="#" class="store-btn"><i class="ti ti-brand-apple"></i> App Store</a>
-      <a href="#" class="store-btn"><i class="ti ti-brand-google-play"></i> Google Play</a>
+      <a href="https://apps.apple.com/app/id6776031143" target="_blank" rel="noopener" class="store-btn"><i class="ti ti-brand-apple"></i> App Store</a>
+      <span class="store-btn store-btn-soon"><i class="ti ti-brand-google-play"></i> Google Play <span class="soon-tag">Coming soon</span></span>
     </div>
   </div>
 </section>
@@ -449,7 +452,7 @@ a{color:inherit}
         <li><i class="ti ti-check"></i> Tags, notes & follow-ups</li>
         <li><i class="ti ti-check"></i> JSON export & import</li>
       </ul>
-      <button class="price-btn">Get started free</button>
+      <a href="https://asset-manager-contact-list.replit.app" target="_blank" rel="noopener" class="price-btn">Get started free</a>
     </div>
     <div class="price-card feat">
       <div class="price-tier">Pro</div>
@@ -473,7 +476,7 @@ a{color:inherit}
     <h2>We sync your contacts.<br>But we can't read a single one.</h2>
     <p>Most "private" apps send your data to the cloud and ask you to trust them with it. Privilio syncs across your devices too — but everything is end-to-end encrypted with a passphrase only you know. Our servers only ever hold ciphertext, so even if our database were hacked, subpoenaed, or sold, there'd be nothing readable in it.</p>
     <div class="audit-links">
-      <a href="#pricing" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
+      <a href="https://asset-manager-contact-list.replit.app" target="_blank" rel="noopener" class="btn-pri"><i class="ti ti-download"></i> Get started free</a>
       <a href="#how" class="btn-ghost"><i class="ti ti-eye"></i> See how it works</a>
     </div>
   </div>
