@@ -6,10 +6,15 @@
 <title>Privilio — Your contacts. Fully private.</title>
 <meta name="description" content="An end-to-end encrypted contact manager that syncs across your devices. Encrypted with a passphrase only you know — we store only ciphertext. Built in Canada.">
 <meta name="theme-color" content="#0A0E15">
+<meta name="apple-itunes-app" content="app-id=6776031143">
 <meta property="og:title" content="Privilio — Your contacts. Fully private.">
-<meta property="og:description" content="End-to-end encrypted contacts, synced across your devices. Zero-knowledge — we only store ciphertext.">
+<meta property="og:description" content="End-to-end encrypted contacts, synced across your devices. Zero-knowledge — we only store ciphertext. Free for 50 contacts; Pro $0.99/mo with 7-day trial.">
 <meta property="og:url" content="https://privilio.ca">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Privilio">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Privilio — Your contacts. Fully private.">
+<meta name="twitter:description" content="End-to-end encrypted contacts, synced across your devices. Zero-knowledge — we only store ciphertext.">
 <link rel="canonical" href="https://privilio.ca">
 <link rel="icon" type="image/png" href="/logo.png">
 <link rel="apple-touch-icon" href="/logo.png">
@@ -233,6 +238,111 @@ a{color:inherit}
   .phone{width:168px}
 }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Privilio",
+      "url": "https://privilio.ca",
+      "logo": "https://privilio.ca/logo.png",
+      "email": "hello@privilio.ca",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Adapting Services Limited",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Ontario",
+          "addressCountry": "CA"
+        }
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6776031143"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Privilio",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "iOS, Web",
+      "url": "https://privilio.ca",
+      "downloadUrl": "https://apps.apple.com/app/id6776031143",
+      "description": "Zero-knowledge encrypted contact manager. Contacts are encrypted on your device; we store only ciphertext. Built in Canada.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Up to 50 contacts"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "0.99",
+          "priceCurrency": "USD",
+          "description": "Unlimited contacts. $0.99/mo or $11.88/yr. 7-day free trial. In-app purchase."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Privilio see my contacts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your contacts are encrypted on your device with a passphrase only you know, before they're ever synced. Our servers store only ciphertext — we never receive your passphrase and can't read your contacts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I lose my phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because your contacts are synced (encrypted), you can sign in on a new device, enter your passphrase, and your network is restored. Remember your passphrase — we can't recover it. You can also keep a JSON export as a backup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the recovery code for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When you set up Privilio you're given a one-time recovery code — a backup way to unlock your encrypted data if you forget your passphrase. Store it somewhere safe and offline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Privilio subject to Canadian surveillance laws?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Privilio is built by a Canadian company and respects Canadian law. Because of our zero-knowledge design, the only thing we could ever produce in response to a court order is encrypted ciphertext — useless without your passphrase, which we never have."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the vault protected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any contact you mark as private moves into your vault, locked behind a 4-digit PIN you set in Settings — on top of the end-to-end encryption that already protects everything. Vault contacts are hidden from your main list."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Privilio work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can browse and edit your contacts offline, and your changes sync — still encrypted — the next time you're online."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -461,16 +571,17 @@ a{color:inherit}
     </div>
     <div class="price-card feat">
       <div class="price-tier">Pro</div>
-      <div class="price-amt"><span class="price-val">$4.99</span><span class="price-per">/mo</span></div>
-      <div class="price-note">or $39.99/year — save 33%</div>
+      <div class="price-amt"><span class="price-val">$0.99</span><span class="price-per">/mo</span></div>
+      <div class="price-note">or $11.88/year · 7-day free trial</div>
       <ul class="price-feats">
         <li><i class="ti ti-check"></i> Everything in Free</li>
         <li><i class="ti ti-check"></i> Unlimited contacts</li>
         <li><i class="ti ti-check"></i> Unlimited notes</li>
         <li><i class="ti ti-check"></i> Unlimited vault contacts</li>
         <li><i class="ti ti-check"></i> Priority support</li>
+        <li><i class="ti ti-check"></i> 7-day free trial</li>
       </ul>
-      <button class="price-btn fill">Upgrade to Pro</button>
+      <a href="https://apps.apple.com/app/id6776031143" target="_blank" rel="noopener" class="price-btn fill">Start free trial</a>
     </div>
   </div>
 </section>
@@ -545,9 +656,9 @@ a{color:inherit}
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <a href="#">About</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
     </div>
   </div>
   <div class="footer-bot">
