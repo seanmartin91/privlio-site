@@ -9,8 +9,13 @@ Static marketing + legal site for **Privilio**, a local-first private contact ma
 | `index.html`   | `/` — landing page |
 | `privacy.html` | `/privacy` |
 | `terms.html`   | `/terms` |
-| `preview.html` | `/preview` — interactive app preview |
+| `contact.html` | `/contact` — support emails |
+| `about.html`   | `/about` — stub (coming soon) |
+| `blog.html`    | `/blog` — stub (coming soon) |
+| `preview.html` | `/preview` — interactive app preview (disallowed in robots.txt) |
 | `email.html`   | launch email template (not linked in nav) |
+| `robots.txt`   | `/robots.txt` |
+| `sitemap.xml`  | `/sitemap.xml` |
 
 ## Deploy on Netlify
 **Option 1 — connect this repo (continuous deploy):**

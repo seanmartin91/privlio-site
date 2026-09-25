@@ -472,8 +472,8 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
     <div class="pricing-card pop" style="margin-top:20px">
       <div class="pop-label">Most popular</div>
       <div class="pc-tier">Pro</div>
-      <div class="pc-price" id="pro-p">$4.99<span>/mo</span></div>
-      <div class="pc-billed" id="pro-b">or $39.99/year</div>
+      <div class="pc-price" id="pro-p">$0.99<span>/mo</span></div>
+      <div class="pc-billed" id="pro-b">or $11.88/year · 7-day free trial</div>
       <button class="pc-btn fill" onclick="switchTab('onboard')">Upgrade to Pro</button>
       <div class="pc-feat"><i class="ti ti-check y"></i>Everything in Free</div>
       <div class="pc-feat"><i class="ti ti-check y"></i>Unlimited contacts</div>
@@ -624,10 +624,10 @@ function flipPrice(){
   document.getElementById('pl-an').classList.toggle('on',!isMo);
   document.getElementById('pl-mo').classList.toggle('on',isMo);
   document.getElementById('psave').style.display=isMo?'none':'';
-  document.getElementById('pro-p').innerHTML=isMo?'£2.99<span>/mo</span>':'£2.49<span>/mo</span>';
-  document.getElementById('pro-b').textContent=isMo?'Billed monthly':'Billed £29.99/year';
-  document.getElementById('team-p').innerHTML=isMo?'£7.99<span>/mo per seat</span>':'£6.65<span>/mo per seat</span>';
-  document.getElementById('team-b').textContent=isMo?'Billed monthly · up to 5 seats':'Billed £79.99/year · up to 5 seats';
+  var proP=document.getElementById('pro-p');
+  var proB=document.getElementById('pro-b');
+  if(proP) proP.innerHTML=isMo?'$0.99<span>/mo</span>':'$0.99<span>/mo</span>';
+  if(proB) proB.textContent=isMo?'Billed monthly · 7-day free trial':'Billed $11.88/year · 7-day free trial';
 }
 
 // onboarding
