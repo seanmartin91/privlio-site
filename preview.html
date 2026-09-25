@@ -473,7 +473,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
       <div class="pop-label">Most popular</div>
       <div class="pc-tier">Pro</div>
       <div class="pc-price" id="pro-p">$0.99<span>/mo</span></div>
-      <div class="pc-billed" id="pro-b">or $11.88/year · 7-day free trial</div>
+      <div class="pc-billed" id="pro-b">or $11.90/year · 7-day free trial</div>
       <button class="pc-btn fill" onclick="switchTab('onboard')">Upgrade to Pro</button>
       <div class="pc-feat"><i class="ti ti-check y"></i>Everything in Free</div>
       <div class="pc-feat"><i class="ti ti-check y"></i>Unlimited contacts</div>
@@ -627,7 +627,7 @@ function flipPrice(){
   var proP=document.getElementById('pro-p');
   var proB=document.getElementById('pro-b');
   if(proP) proP.innerHTML=isMo?'$0.99<span>/mo</span>':'$0.99<span>/mo</span>';
-  if(proB) proB.textContent=isMo?'Billed monthly · 7-day free trial':'Billed $11.88/year · 7-day free trial';
+  if(proB) proB.textContent=isMo?'Billed monthly · 7-day free trial':'Billed $11.90/year · 7-day free trial';
 }
 
 // onboarding
